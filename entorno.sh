@@ -19,6 +19,9 @@ if [ -e ~/.irssi/config ]; then
 	rm ~/.irssi/config
 	ln -s $PWD/config ~/.irssi/config
 fi
-# ln -s $PWD/gitignore ~/.gitignore
+if [ -e ~/.gitignore ]; then
+	rm ~/.gitconfig
+	ln -s $PWD/gitignore ~/.gitignore
+fi
 echo "Finalizado"
 exit 0;
