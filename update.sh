@@ -2,13 +2,13 @@
 # Viernes, Abril 11/2014
 # Script para actualizar Debian estable a testing
 # Developed by abr4xas <me@abr4xas.org>
+
 if [[ $USER != root ]]; then
 	echo "##########################################"
 	echo "# Error: Debe tener privilegios de ROOT ##"
 	echo "##########################################"
    exit 1
 fi
-
 dpkg --add-architecture i386
 echo "## Debian Testing" > /etc/apt/sources.list
 echo "deb http://ftp.de.debian.org/debian/ testing main contrib non-free" >> /etc/apt/sources.list
@@ -24,8 +24,7 @@ echo "deb http://www.deb-multimedia.org testing main non-free" >> /etc/apt/sourc
 apt-get update -q
 apt-get -y dist-upgrade
 apt-get install -f
-apt-get install -y debian-multimedia-keyring pkg-mozilla-archive-keyring
-apt-get update
+apt-get install -y debian-multimedia-keyring pkg-mozilla-archive-keyring squid3
 ## squid.conf pertenece a @sinfallas
 sed -i 's_tmpfs /var/spool_#tmpfs /var/spool_g' /etc/fstab
 mkdir -p /var/spool/squid3
