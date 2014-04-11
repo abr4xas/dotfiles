@@ -26,7 +26,6 @@ apt-get -y dist-upgrade
 apt-get install -f
 apt-get install -y debian-multimedia-keyring pkg-mozilla-archive-keyring
 apt-get update
-apt-get install -y -t experimental iceweasel
 ## squid.conf pertenece a @sinfallas
 sed -i 's_tmpfs /var/spool_#tmpfs /var/spool_g' /etc/fstab
 mkdir -p /var/spool/squid3
@@ -85,7 +84,4 @@ service squid3 start
 echo "export http_proxy=http://127.0.0.1:3128/" >> /root/.bashrc
 echo "export https_proxy=http://127.0.0.1:3128/" >> /root/.bashrc
 echo "export ftp_proxy=http://127.0.0.1:3128/" >> /root/.bashrc
-## Instalamos Brackets
-wget -c https://github.com/adobe/brackets/releases/download/sprint-37/Brackets.Sprint.37.64-bit.deb
-dpkg -i Brackets.Sprint.37.64-bit.deb
 apt-get autoremove -y
