@@ -27,3 +27,5 @@
   line-number-interval = 1
   commit-encoding = "UTF-8"
   tab-size = 2  
+[http]
+	postBuffer = 5242880000
