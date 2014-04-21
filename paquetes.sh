@@ -10,5 +10,5 @@ if [[ $USER != root ]]; then
    exit 1
 fi
 apt-get install -f
-apt-get install -y -t experimental iceweasel git flashplugin-nonfree firmware-linux firmware-linux-free firmware-linux-nonfree firmware-realtek linux-wlan-ng nodejs
+apt-get install -y -t experimental iceweasel git flashplugin-nonfree firmware-linux firmware-linux-free firmware-linux-nonfree firmware-realtek linux-wlan-ng nodejs irssi
 apt-get autoremove -y
