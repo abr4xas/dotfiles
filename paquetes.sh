@@ -10,11 +10,13 @@ if [[ $USER != root ]]; then
    exit 1
 fi
 apt-get update -q
+apt-get update -y
 ## Alguna dependencia rota
 apt-get install -f
 add-apt-repository ppa:chris-lea/node.js
 apt-get update
-apt-get install -y git nodejs irssi filezilla squid3
+apt-get install -y git nodejs irssi filezilla squid3 ruby2.0
+gem install sass
 ## squid.conf pertenece a @sinfallas
 sed -i 's_tmpfs /var/spool_#tmpfs /var/spool_g' /etc/fstab
 mkdir -p /var/spool/squid3
