@@ -15,7 +15,7 @@ apt-get update -y
 apt-get install -f
 add-apt-repository ppa:chris-lea/node.js
 apt-get update
-apt-get install -y git nodejs irssi filezilla squid3 ruby2.0
+apt-get install -y git nodejs irssi filezilla squid3 ruby2.0 libreoffice-l10n-es
 gem install sass
 ## squid.conf pertenece a @sinfallas
 sed -i 's_tmpfs /var/spool_#tmpfs /var/spool_g' /etc/fstab
