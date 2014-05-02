@@ -1,0 +1,9 @@
+Directorio de configuración: /usr/local/nginx/
+Directorio de configuración de virtualhost y SSL: /usr/local/nginx/conf.d/
+Directorio de logs: /var/log/nginx/
+Directorio raíz: /usr/share/nginx/html
+Fichero de configuración: /usr/local/nginx/nginx.conf
+Fichero de log de accesos: /var/log/nginx/access.log
+Fichero de log de error: /var/log/nginx/error.log
+
+sudo nginx -t

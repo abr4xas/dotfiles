@@ -30,6 +30,7 @@ channels = (
   { name = "#turpial"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#archlinux-es"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#vaslibre"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#xanadu-linux"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#ubuntu-ve"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
