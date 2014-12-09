@@ -11,7 +11,9 @@ if [[ $USER != root ]]; then
    exit 1
 fi
 
-echo "############################"
+service apache2 stop
+apt-get purge apache2 apache2-utils apache2.2-bin apache2-common -y
+apt-get autoremove
 
 apt-get install nginx -y
 service nginx start
