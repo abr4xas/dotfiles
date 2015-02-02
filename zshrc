@@ -1,0 +1,34 @@
+autoload -U colors && colors
+# Quickly creates a folder
+function take() {
+    mkdir $1
+    cd $1
+}
+# Run a local server on current folder
+function server() {
+    if [ $1 ]
+    then
+        local port="$1"
+    else
+        local port="8000"
+    fi
+    open "http://localhost:$port" && python -m SimpleHTTPServer "$port"
+}
+# Crear un directorio con el nombre que le pasemos por ($1) y luego cambiamos al directorio
+function create() {  
+  mkdir $1
+  cd $1
+}
+# Clonamos un repo
+function clone() {  
+  git clone $1
+  cd $1
+}
+# Prompt
+PROMPT="
+$fg[red]%n$reset_color@$fg[yellow]%m$reset_color: $fg[green]%~$reset_color
+$fg[green]>$reset_color "
+
+# alias
+alias vnd3x='git submodule foreach git pull origin master && git pull origin master && git log > CHANGELOG && git add . && git commit -m "Actualizando repo" && git push origin master'
+alias ll = 'ls -al'

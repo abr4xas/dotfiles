@@ -1,0 +1,216 @@
+commit 2df5d6afd9201e000625a669296f0af310ae834d
+Author: abr4xas <me@abr4xas.org>
+Date:   Tue Dec 9 09:02:41 2014 -0500
+
+    Modificado
+
+commit 0d0aa9efaa5dc39148ed3638401d36b81e512df0
+Author: abr4xas <me@abr4xas.org>
+Date:   Tue Dec 9 08:59:38 2014 -0500
+
+    modificado
+
+commit 97e4189c7bcc084471bf58cc15dbe1c7991f8400
+Author: abr4xas <me@abr4xas.org>
+Date:   Tue Dec 9 08:47:31 2014 -0500
+
+    new file
+
+commit 420e1c604570370871192e872a70d56c8570051e
+Author: abr4xas <me@abr4xas.org>
+Date:   Tue Dec 9 08:10:52 2014 -0500
+
+    deleted
+
+commit 9fe3e5cf4be080fc869ad4d4955ec655ee53710e
+Author: abr4xas <me@abr4xas.org>
+Date:   Tue Dec 9 08:08:54 2014 -0500
+
+    renamed
+
+commit 9587b50e1c2c99e8e30b9c92c5868e39454ab8f9
+Author: abr4xas <me@abr4xas.org>
+Date:   Mon May 5 11:36:40 2014 -0430
+
+    update
+
+commit 0f72d539008481d90efc000db24607aae9fdd0be
+Author: abr4xas <me@abr4xas.org>
+Date:   Fri May 2 00:14:44 2014 -0430
+
+    Se agregan más paquetes
+
+commit 2061f8ddd750d826bffac8cead69c6e7e151a0e3
+Author: abr4xas <me@abr4xas.org>
+Date:   Fri May 2 00:09:36 2014 -0430
+
+    update
+
+commit 320362c59f260811e642fea56e8e35d565277561
+Merge: 1c26037 6d57720
+Author: abr4xas <me@abr4xas.org>
+Date:   Thu May 1 14:51:53 2014 -0430
+
+    Merge branch 'master' of https://github.com/abr4xas/dotfiles
+
+commit 6d577205b11f6d67d4ad9e6282c802a871478003
+Author: abr4xas <me@abr4xas.org>
+Date:   Wed Apr 30 11:39:01 2014 -0430
+
+    Se agrega paquete en español para libreoffice
+
+commit 60146917ece98fc9c19606e0400e67cfb4ddeef2
+Author: abr4xas <me@abr4xas.org>
+Date:   Tue Apr 29 14:34:09 2014 -0430
+
+    Se actualiza la opcion para git push
+
+commit fdc761c33d297a6a2d4548c42f3ab639ca69e0ed
+Author: abr4xas <me@abr4xas.org>
+Date:   Tue Apr 29 14:33:33 2014 -0430
+
+    Actualizado
+
+commit 49276ecb4e5ad8a62ba23e91045a7423d1981966
+Author: abr4xas <me@abr4xas.org>
+Date:   Tue Apr 29 12:59:47 2014 -0430
+
+    Actualizado
+
+commit 1cd627e2b044d061ed37160d57d6743cf0285a42
+Author: abr4xas <me@abr4xas.org>
+Date:   Wed Apr 23 09:21:47 2014 -0430
+
+    Actualizado
+
+commit bb13bd7ef597377704376a8d541e14c267f7e956
+Author: abr4xas <me@abr4xas.org>
+Date:   Wed Apr 23 09:12:43 2014 -0430
+
+    Agregado NODEJS
+
+commit 953850a3a36fe2f0ed78c38f90eb3f39f931ef77
+Author: abr4xas <me@abr4xas.org>
+Date:   Wed Apr 23 09:10:18 2014 -0430
+
+    Fix en enlace simbolico a gitignore
+
+commit 5d442df65dc2db6862d959f42f7d28bad9598a79
+Author: abr4xas <me@abr4xas.org>
+Date:   Mon Apr 21 15:53:42 2014 -0430
+
+    Se agrega IRSSI
+
+commit 761c957f31a9a48bfdf4da8d05227e9e6919a25f
+Author: abr4xas <me@abr4xas.org>
+Date:   Mon Apr 21 15:44:46 2014 -0430
+
+    Modificado
+
+commit 02fbe13b2809dc42f4bd112970beb3479690a741
+Author: abr4xas <me@abr4xas.org>
+Date:   Mon Apr 21 15:39:54 2014 -0430
+
+    Se agrega nodejs
+
+commit 20a717986f1ac23414e27527bbcd3be20df3d272
+Author: abr4xas <abr4xas@dx2400.sotarn>
+Date:   Mon Apr 21 12:58:39 2014 -0430
+
+    modificado
+
+commit 1c26037de9a6b2e6f8c103f6960051125a3688bd
+Author: abr4xas <me@abr4xas.org>
+Date:   Sun Apr 20 12:39:46 2014 -0430
+
+    Para instalar y configurar nginx
+
+commit 081ab9caffe0d3ba9c254dc58fc0f3855d6b957d
+Author: abr4xas <me@abr4xas.org>
+Date:   Sun Apr 20 12:39:21 2014 -0430
+
+    Para instalar nodejs
+
+commit 1ce3069e8bf458c1deeeefe0cf11c178aa47b8e4
+Author: abr4xas <me@abr4xas.org>
+Date:   Thu Apr 17 10:24:13 2014 -0430
+
+    Fix
+
+commit 18bf976b1596bc3a43a88236867b5c1341b6f07c
+Author: abr4xas <me@abr4xas.org>
+Date:   Sun Apr 13 13:14:12 2014 -0430
+
+    Se agrega variable para incrementar el bufer HTTP para git
+
+commit cb38ee48d1af0e4ff26936ff91b5738a2d452fa8
+Author: abr4xas <me@abr4xas.org>
+Date:   Fri Apr 11 14:34:15 2014 -0430
+
+    typo
+
+commit a263a6ba03ba46c40a0fbc51f71721fe47995e74
+Author: abr4xas <me@abr4xas.org>
+Date:   Fri Apr 11 14:30:27 2014 -0430
+
+    Se agrega squid a la linea de instalación
+
+commit d7c12513972de052099d9bab084d2e5cb3e75733
+Author: abr4xas <me@abr4xas.org>
+Date:   Fri Apr 11 14:11:44 2014 -0430
+
+    Instalación de paquetes varios
+
+commit f76ce2ff9540b9acf7132beab00cb95fb542d0b9
+Author: abr4xas <me@abr4xas.org>
+Date:   Fri Apr 11 12:03:15 2014 -0430
+
+    actualizado
+
+commit 7b609f2d08e2109216dc9f87860396808d7b3ac8
+Author: abr4xas <me@abr4xas.org>
+Date:   Fri Apr 11 11:58:02 2014 -0430
+
+    Actualizado
+
+commit 8fff9749570a91f36be50d8ca84c32c58c0d7658
+Author: abr4xas <me@abr4xas.org>
+Date:   Fri Apr 11 11:54:36 2014 -0430
+
+    Para pasar a Debian testing
+
+commit 11246ef16e126ebcc57a3759aab9dbb89cc57ed8
+Author: abr4xas <me@abr4xas.org>
+Date:   Fri Apr 11 11:46:47 2014 -0430
+
+    Actualizado
+
+commit 8be38b86a243956aec9f15e4115c22e8eb13e386
+Author: abr4xas <me@abr4xas.org>
+Date:   Fri Apr 11 11:45:26 2014 -0430
+
+    Se agrega gitignore
+
+commit e45ad2797485cfce170a73c7e2bb728e870c575c
+Author: abr4xas <me@abr4xas.org>
+Date:   Fri Apr 11 11:40:35 2014 -0430
+
+    Initial commit
+
+commit 01c3a93c10f8b03b8387d2eac29d636883a1a266
+Author: abr4xas <me@abr4xas.org>
+Date:   Fri Apr 11 11:15:57 2014 -0430
+
+    Se agrega IRSSI config
+
+commit 99796602ccf35134b928b34754fe4b94aec46061
+Author: abr4xas <abr4xas@dx2400.sotarn>
+Date:   Fri Apr 11 11:14:41 2014 -0430
+
+    Se agrega gitconfig
+
+commit 4a298d99e5e803018298665663c32b60d8a16dbc
+Author: ángel <bullgram@gmail.com>
+Date:   Fri Apr 11 08:42:51 2014 -0700
+
+    Initial commit

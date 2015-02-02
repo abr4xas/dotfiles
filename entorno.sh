@@ -17,12 +17,12 @@ if [ -e ~/.gitconfig ]; then
    else
 	ln -s $PWD/gitconfig ~/.gitconfig
 fi
-if [ -e ~/.irssi/config ]; then
-	rm ~/.irssi/config
-	ln -s $PWD/config ~/.irssi/config
-   else
-	ln -s $PWD/config ~/.irssi/config
-fi
+#if [ -e ~/.irssi/config ]; then
+#	rm ~/.irssi/config
+#	ln -s $PWD/config ~/.irssi/config
+#   else
+#	ln -s $PWD/config ~/.irssi/config
+#fi
 if [ -e ~/.gitignore ]; then
 	rm ~/.gitignore
 	ln -s $PWD/gitignore ~/.gitignore
