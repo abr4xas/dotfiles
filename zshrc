@@ -1,9 +1,10 @@
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="nico"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+# User configuration
 autoload -U colors && colors
-# Quickly creates a folder
-function take() {
-    mkdir $1
-    cd $1
-}
 # Run a local server on current folder
 function server() {
     if [ $1 ]
@@ -28,7 +29,6 @@ function clone() {
 PROMPT="
 $fg[red]%n$reset_color@$fg[yellow]%m$reset_color: $fg[green]%~$reset_color
 $fg[green]>$reset_color "
-
 # alias
 alias vnd3x='git submodule foreach git pull origin master && git pull origin master && git log > CHANGELOG && git add . && git commit -m "Actualizando repo" && git push origin master'
-alias ll = 'ls -al'
+alias ll='ls -al'
