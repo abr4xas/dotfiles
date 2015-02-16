@@ -20,10 +20,9 @@ function create() {
   mkdir $1
   cd $1
 }
-# Clonamos un repo
-function clone() {  
-  git clone $1
-  cd $1
+# Pasamos por ($1) la descripcion del commit se debe inclir las comillas dobles
+function gpush(){
+	git log > CHANGELOG && git add . && git commit -m $1 && git push origin
 }
 # Prompt
 PROMPT="
@@ -32,4 +31,3 @@ $fg[green]>$reset_color "
 # alias
 alias vnd3x='git submodule foreach git pull origin master && git pull origin master && git log > CHANGELOG && git add . && git commit -m "Actualizando repo" && git push origin master'
 alias ll='ls -al'
-alias brewup='brew update'
