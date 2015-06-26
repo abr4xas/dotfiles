@@ -22,7 +22,7 @@ function create() {
 }
 # Pasamos por ($1) la descripcion del commit se debe inclir las comillas dobles
 function gpush(){
-	git add . && git commit -m $1 && git push origin
+	git add . && git commit -am $1 && git push origin
 }
 # Prompt
 PROMPT="
