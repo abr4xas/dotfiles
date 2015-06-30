@@ -22,12 +22,12 @@ function create() {
 }
 # Pasamos por ($1) la descripcion del commit se debe inclir las comillas dobles
 function gpush(){
-	git add . && git commit -am $1 && git push origin
+	git log --pretty=format:"%cn %h %s" --graph > CHANGELOG && git add . && git commit -am $1 && git push origin
 }
 # Prompt
 PROMPT="
 $fg[red]%n$reset_color@$fg[yellow]%m$reset_color: $fg[green]%~$reset_color
 $fg[green]>$reset_color "
+
 # alias
-alias vnd3x='git submodule foreach git pull origin master && git pull origin master && git log > CHANGELOG && git add . && git commit -m "Actualizando repo" && git push origin master'
 alias ll='ls -al'
