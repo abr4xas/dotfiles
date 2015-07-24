@@ -1,0 +1,10 @@
+*
+!.gitignore
+!config
+!entorno.sh
+!ghost.sh
+!gitconfig
+!gitignore
+!info
+!README.md
+!zshrc
