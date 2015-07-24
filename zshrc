@@ -29,6 +29,7 @@ function gpush(){
 PROMPT="
 $fg[red]%n$reset_color@$fg[yellow]%m$reset_color: $fg[green]%~$reset_color
 $fg[green]>$reset_color "
+
 # alias
 alias vnd3x='git submodule foreach git pull origin master && git pull origin master && git log > CHANGELOG && git add . && git commit -m "Actualizando repo" && git push origin master'
 alias ll='ls -al'
