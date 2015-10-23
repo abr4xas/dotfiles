@@ -1,0 +1,26 @@
+{
+    "closeBrackets": true,
+    "styleActiveLine": true,
+    "themes.theme": "ivanbarcia.material-dark",
+    "linting.collapsed": false,
+    "BracketsNewProjectExtension.newProjectsFolder": "",
+    "fonts.fontSize": "14px",
+    "debug.showErrorsInStatusBar": true,
+    "brackets-indent-guides.enabled": true,
+    "brackets-wsSanitizer.notification": false,
+    "customToolbar.red": false,
+    "fonts.fontFamily": "'SourceCodePro-Medium', ＭＳ ゴシック, 'MS Gothic', monospace",
+    "brackets-wsSanitizer.enabled": true,
+    "utf8-converter.allowDigging": true,
+    "utf8-converter.allowAutoConvert": true,
+    "highlightMatches": true,
+    "jscodehints.noHintsOnDot": true,
+    "jslint.options": {
+        "devel": true,
+        "es6": true,
+        "node": true,
+        "nomen": true,
+        "todo": true
+    },
+    "sortDirectoriesFirst": true
+}
