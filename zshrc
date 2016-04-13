@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-ZSH_THEME="nico"
+export LANG=en_US.UTF-8
+export UPDATE_ZSH_DAYS=7
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -16,7 +16,7 @@ function server() {
     else
         local port="8000"
     fi
-    open "http://localhost:$port" && python -m SimpleHTTPServer "$port"
+    echo "http://localhost:$port" && python -m SimpleHTTPServer "$port"
 }
 # Crear un directorio con el nombre que le pasemos por ($1) y luego cambiamos al directorio
 function create() {
@@ -25,14 +25,16 @@ function create() {
 }
 # Pasamos por ($1) la descripcion del commit se debe inclir las comillas dobles
 function gpush(){
-    git log --graph --pretty=format:'%Cred%h%Creset - %C(green)%an%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative > CHANGELOG && git add . && git commit -am $1 && git push origin
+    git add . && git commit -am $1 && git push origin master
 }
 # Prompt
 PROMPT="
 $fg[red]%n$reset_color@$fg[yellow]%m$reset_color: $fg[green]%~$reset_color
 $fg[green]>$reset_color "
 
-# alias
-alias vnd3x="git submodule foreach git pull origin master && git pull origin master && git log > CHANGELOG && git add . && git commit -m "Actualizando repo" && git push origin master"
+# Other aliases
 alias ll="ls -al"
-
+alias vup='vagrant up && vagrant ssh'
+# Git aliases
+alias vnd3x="git submodule foreach git pull origin master && git pull origin master"
+alias gclean='g clean -df' # Remove all untracked files & directories
