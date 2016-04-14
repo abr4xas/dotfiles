@@ -25,7 +25,7 @@
 [github]
   user = abr4xas
 [core]
-  excludesfile = /home/abr4xas/.gitignore
+  excludesfile = ~/.gitignore
   editor = nano
 [pager]
   color = true
