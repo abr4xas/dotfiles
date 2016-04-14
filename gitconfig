@@ -42,3 +42,5 @@
   tab-size = 2
 [http]
   postBuffer = 524288000
+[commit]
+	template = ~/.gitmessage.txt
