@@ -14,20 +14,18 @@ fi
 if [ -e ~/.gitconfig ]; then
     rm ~/.gitconfig
     ln -s $PWD/gitconfig ~/.gitconfig
-   else
-    ln -s $PWD/gitconfig ~/.gitconfig
 fi
 #if [ -e ~/.irssi/config ]; then
 #	rm ~/.irssi/config
-#	ln -s $PWD/config ~/.irssi/config
-#   else
 #	ln -s $PWD/config ~/.irssi/config
 #fi
 if [ -e ~/.gitignore ]; then
     rm ~/.gitignore
     ln -s $PWD/gitignore ~/.gitignore
-   else
-    ln -s $PWD/gitignore ~/.gitignore
+fi
+if [ -e ~/gitmessage.txt ]; then
+    rm ~/gitmessage.txt
+    ln -s $PWD/gitmessage.txt ~/gitmessage.txt
 fi
 echo "Finalizado"
 exit 0;
