@@ -65,6 +65,10 @@ extract ()
       fi
     }
 
+# nvm
+export NVM_DIR="/home/angel/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # Other aliases
 alias ll="ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F"
 alias vup='vagrant up && vagrant ssh'
