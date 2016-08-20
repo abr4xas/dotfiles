@@ -72,5 +72,5 @@ export NVM_DIR="/home/angel/.nvm"
 # Other aliases
 alias ll="ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F"
 # Git aliases
-alias vnd3x="git submodule foreach git pull origin master && git pull origin master"
+alias vnd3x="git submodule foreach git pull origin master"
 alias gclean='g clean -df' # Remove all untracked files & directories
