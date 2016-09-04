@@ -38,10 +38,6 @@ function create() {
   mkdir $1
   cd $1
 }
-# Pasamos por ($1) la descripcion del commit se debe inclir las comillas dobles
-function gpush(){
-    git add . && git commit -am $1 && git push origin master
-}
 
 extract ()
     {
