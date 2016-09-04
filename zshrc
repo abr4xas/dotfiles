@@ -65,6 +65,23 @@ extract ()
       fi
     }
 
+#
+# Ayuda
+#
+
+myHelp() { 
+  echo 'Ayuda para el plugin de GIT'
+  echo 'gl => git pull $(current_branch)'
+  echo 'gp => git push origin $(current_branch)'
+  echo 'gca => git commit -v -a'
+  echo 'gcm => git checkout master'
+  echo 'gba => git branch -a'
+  echo 'glgg => git log --graph --max-count=5'
+  echo 'grh => git reset HEAD'
+  echo 'gdv => git diff -w "$@" | view -'
+  echo 'gss => git status -s'
+}
+
 # nvm
 export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

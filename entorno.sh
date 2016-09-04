@@ -43,5 +43,9 @@ if [ -e ~/.oh-my-zsh/themes/honukai.zsh-theme ]; then
 else
     cp $PWD/honukai.zsh-theme ~/.oh-my-zsh/themes/honukai.zsh-theme
 fi
+sleep 5
+
+source ~/.zshrc
+
 echo "Finalizado"
 exit 0;
