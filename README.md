@@ -1,4 +1,4 @@
-![http://dotfiles.github.io/](//dotfiles.github.com/images/dotfiles-logo.png)
+![http://dotfiles.github.io/](https://dotfiles.github.com/images/dotfiles-logo.png)
 
 # Mis dotfiles
 
