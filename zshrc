@@ -39,8 +39,7 @@ function create() {
   cd $1
 }
 
-extract ()
-    {
+extract () {
       if [ -f $1 ] ; then
         case $1 in
           *.tar.bz2)   tar xjf $1   ;;
@@ -59,7 +58,16 @@ extract ()
       else
         echo "'$1' is not a valid file"
       fi
-    }
+}
+
+#
+# youtube-dl
+#
+
+bajar () {
+  youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' --merge-output-format=mp4 $1
+}
+
 
 #
 # Ayuda
