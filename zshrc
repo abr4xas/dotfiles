@@ -94,6 +94,9 @@ export NVM_DIR="$HOME/.nvm"
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
+#composer stuff xD
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
 # Other aliases
 alias ll="ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F"
 # Git aliases
