@@ -97,6 +97,11 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 #composer stuff xD
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
+
+#
+# GO 
+export PATH=$PATH:/usr/local/go/bin
+
 # Other aliases
 alias ll="ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F"
 # Git aliases
