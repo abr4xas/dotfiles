@@ -1,5 +1,5 @@
-subject line
+# If applied, this commit will...
 
-what happened
+# Explain why this change is being made
 
-[ticket: X]
+# Provide links to any relevant tickets, articles or other resources
