@@ -9,7 +9,7 @@ Configuraciones personales de algunas cosas que uso :)
 > Bajo su responsabilidad.
 
 ```bash
-git clone https://github.com/abr4xas/dotfiles.git ~/dotfiles
+git clone https://github.com/abr4xas/dotfiles.git ~/.dotfiles
 ```
 
 En el archivo `gitconfig` cambiar:
