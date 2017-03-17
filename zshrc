@@ -64,10 +64,13 @@ extract () {
 # youtube-dl
 #
 
-bajar () {
-  youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' --merge-output-format=mp4 $1
+musica () {
+  youtube-dl -x --audio-format mp3 $1
 }
 
+video () {
+  youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' --merge-output-format=mp4 $1
+}
 
 #
 # Ayuda
