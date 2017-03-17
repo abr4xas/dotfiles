@@ -107,6 +107,6 @@ export PATH=$PATH:/usr/local/go/bin
 
 # Other aliases
 alias ll="ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F"
+alias climb="composer outdated --outdated --direct" #https://jenssegers.com/83/list-outdated-composer-packages
 # Git aliases
-alias vnd3x="git submodule foreach git pull origin master"
 alias gclean='g clean -df' # Remove all untracked files & directories
