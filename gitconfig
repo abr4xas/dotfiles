@@ -1,6 +1,6 @@
 [user]
   email = me@abr4xas.org
-  name = abr4xas
+  name = angel
   signingkey = 8AE6F481
 [push]
   # A much better default than 'matching'. From the man page:
