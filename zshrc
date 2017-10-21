@@ -6,6 +6,8 @@ export LANG=en_US.UTF-8
 
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=7
+# GPG signing fix (?)
+export GPG_TTY=$(tty)
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
