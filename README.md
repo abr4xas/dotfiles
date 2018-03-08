@@ -1,8 +1,16 @@
-![http://dotfiles.github.io/](https://dotfiles.github.com/images/dotfiles-logo.png)
+<img align="left" width="180" src="https://blog.abr4xas.org/icons/apple-icon-180x180.png">
 
-# Mis dotfiles
+## Mis dotfiles
 
-Configuraciones personales de algunas cosas que uso :)
+---
+
+Configuraciones personales de algunas cosas que uso:
+
+GIT, Youtube-dl, zsh
+
+---
+
+
 
 ### Uso
 
