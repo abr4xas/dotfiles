@@ -74,6 +74,29 @@ video () {
   youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' --merge-output-format=mp4 $1
 }
 
+homestead () {
+  cd ~/Homestead && vagrant halt && vagrant reload --provision && vagrant ssh
+}
+dbuild() {
+ docker-compose build
+}
+dstart() {
+ docker-compose up -d 
+}
+dexec() {
+ docker-compose exec $1 bash
+}
+dstop () {
+ docker-compose stop
+}
+
+ddall () {
+ docker stop $(docker ps -a -q)
+ docker rm -f $(docker ps -a -q)
+ docker rmi $(docker images -q)
+ docker rm -v $(docker ps -a -q)
+}
+
 #
 # Ayuda
 #
@@ -89,6 +112,7 @@ myHelp() {
   echo 'grh => git reset HEAD'
   echo 'gdv => git diff -w "$@" | view -'
   echo 'gss => git status -s'
+  echo 'ddall => elimina cosas de docker'
 }
 
 # nvm
@@ -110,5 +134,15 @@ export PATH=$PATH:/usr/local/go/bin
 # Other aliases
 alias ll="ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F"
 alias climb="composer outdated --outdated --direct" #https://jenssegers.com/83/list-outdated-composer-packages
-# Git aliases
 alias gclean='g clean -df' # Remove all untracked files & directories
+alias nope='git reset --hard;git clean -df'
+alias cdo="composer dump-autoload -o"
+alias tinker='php artisan tinker'
+alias update-global-composer='cd ~/.composer && composer update'
+alias composer-update-global='update-global-composer'
+alias mfs="php artisan migrate:fresh --seed"
+alias wip="git add . && git commit -m '[WIPBICTBF] ¯\_(ツ)_/¯'"
+alias reloadcli="source $HOME/.zshrc"
+alias ci='composer install'
+alias cu='composer update'
+alias cuv='composer update -vvv'
