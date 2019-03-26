@@ -27,18 +27,17 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Run a local server on current folder
 function server() {
-    if [ $1 ]
-    then
-        local port="$1"
-    else
-        local port="8000"
-    fi
-    echo "http://0.0.0.0:$port" && python -m SimpleHTTPServer "$port"
+  if [ $1 ]
+  then
+    local port="$1"
+  else
+    local port="8000"
+  fi
+  google-chrome "http://0.0.0.0:$port" && python -m SimpleHTTPServer "$port"
 }
 # Crear un directorio con el nombre que le pasemos por ($1) y luego cambiamos al directorio
 function create() {
-  mkdir $1
-  cd $1
+  mkdir $1 && cd $1
 }
 
 extract () {
@@ -78,23 +77,27 @@ homestead () {
   cd ~/Homestead && vagrant halt && vagrant reload --provision && vagrant ssh
 }
 dbuild() {
- docker-compose build
+  docker-compose build
 }
 dstart() {
- docker-compose up -d 
+  docker-compose up -d 
 }
 dexec() {
- docker-compose exec $1 bash
+  docker-compose exec $1 bash
 }
 dstop () {
- docker-compose stop
+  docker-compose stop
+}
+
+mysqlIp() {
+  docker exec $1 ping mysql
 }
 
 ddall () {
- docker stop $(docker ps -a -q)
- docker rm -f $(docker ps -a -q)
- docker rmi $(docker images -q)
- docker rm -v $(docker ps -a -q)
+  docker stop $(docker ps -a -q)
+  docker rm -f $(docker ps -a -q)
+  docker rmi $(docker images -q)
+  docker rm -v $(docker ps -a -q)
 }
 
 #
@@ -126,23 +129,48 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 #composer stuff xD
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
-
 #
 # GO 
 export PATH=$PATH:/usr/local/go/bin
 
-# Other aliases
-alias ll="ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F"
-alias climb="composer outdated --outdated --direct" #https://jenssegers.com/83/list-outdated-composer-packages
-alias gclean='g clean -df' # Remove all untracked files & directories
+#
+# mssql
+export PATH=$PATH:/opt/mssql-tools/bin
+
+# Custom git aliases
 alias nope='git reset --hard;git clean -df'
-alias cdo="composer dump-autoload -o"
-alias tinker='php artisan tinker'
-alias update-global-composer='cd ~/.composer && composer update'
-alias composer-update-global='update-global-composer'
-alias mfs="php artisan migrate:fresh --seed"
+alias pushlive="git push origin master && git push live master"
+alias pm="git pull origin master"
+alias gclean='g clean -df' # Remove all untracked files & directories
 alias wip="git add . && git commit -m '[WIPBICTBF] ¯\_(ツ)_/¯'"
-alias reloadcli="source $HOME/.zshrc"
-alias ci='composer install'
-alias cu='composer update'
+
+#
+# other aliasses
+alias _='sudo'
+alias ll="ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F"
+
+#
+# composer
+#
+alias climb="composer outdated --outdated --direct" #https://jenssegers.com/83/list-outdated-composer-packages
+alias cdo="composer dump-autoload -o"
+alias update-global-composer='cd ~/.composer && composer update'
+alias cgu='update-global-composer'
+alias ci='composer install -vvv'
 alias cuv='composer update -vvv'
+
+#
+#
+alias reloadcli="source $HOME/.zshrc"
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+alias ip="curl icanhazip.com"
+alias open='xdg-open .'
+
+#
+# Laravel
+alias art="php artisan"
+alias mfs="php artisan migrate:fresh --seed"
+alias tinker='php artisan tinker'
