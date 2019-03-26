@@ -1,4 +1,3 @@
-<img align="left" width="180" src="https://blog.abr4xas.org/icons/apple-icon-180x180.png">
 
 ## Mis dotfiles
 
