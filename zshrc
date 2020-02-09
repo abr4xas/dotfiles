@@ -93,12 +93,23 @@ mysqlIp() {
   docker exec $1 ping mysql
 }
 
+
+mariaIp() {
+  docker exec $1 ping mariadb
+}
+
+
 ddall () {
   docker stop $(docker ps -a -q)
   docker rm -f $(docker ps -a -q)
   docker rmi $(docker images -q)
   docker rm -v $(docker ps -a -q)
 }
+
+dbranch () {
+  git branch | grep -v $1 | xargs git branch -D
+}
+
 
 #
 # Ayuda
@@ -127,7 +138,7 @@ export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 #composer stuff xD
-export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 #
 # GO 
@@ -140,10 +151,11 @@ export PATH=$PATH:/opt/mssql-tools/bin
 # Custom git aliases
 alias nope='git reset --hard;git clean -df'
 alias pushlive="git push origin master && git push live master"
-alias pm="git pull origin master"
+alias pushmaster='git push origin master'
+alias pom="git pull origin master"
 alias gclean='g clean -df' # Remove all untracked files & directories
-alias wip="git add . && git commit -m '[WIPBICTBF] ¯\_(ツ)_/¯'"
-
+alias wip="git add . && git commit -m ' Fixed what needed fixing and squished some bugs. :bug:'"
+alias fix="git diff --name-only | uniq | xargs code"
 #
 # other aliasses
 alias _='sudo'
@@ -157,8 +169,9 @@ alias cdo="composer dump-autoload -o"
 alias update-global-composer='cd ~/.composer && composer update'
 alias cgu='update-global-composer'
 alias ci='composer install -vvv'
+alias cu='composer update'
 alias cuv='composer update -vvv'
-
+alias ctest='composer run-script test'
 #
 #
 alias reloadcli="source $HOME/.zshrc"
@@ -166,7 +179,7 @@ alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias .....="cd ../../../../"
-alias ip="curl icanhazip.com"
+alias remoteip="curl icanhazip.com"
 alias open='xdg-open .'
 
 #
@@ -174,3 +187,4 @@ alias open='xdg-open .'
 alias art="php artisan"
 alias mfs="php artisan migrate:fresh --seed"
 alias tinker='php artisan tinker'
+alias routelist='php artisan route:list'
