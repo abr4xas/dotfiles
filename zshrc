@@ -111,6 +111,9 @@ alias wip="git add . && git commit -m ' Fixed what needed fixing and squished so
 alias fix="git diff --name-only | uniq | xargs code"0
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias undocommit="git reset HEAD~1"
+alias yolo="git add . && git commit -m \"$(curl -s whatthecommit.com/index.txt)\""
+alias donetoday= "git add . && git commit -m 'To be honest, I do not quite remember everyting I changed here today ¯\_(ツ)_/¯ But it is all good, I tell ya.' "
+
 
 #
 # composer
