@@ -1,7 +1,6 @@
 [user]
-  email = me@abr4xas.org
-  name = angel
-  signingkey = 8AE6F481
+  email = bullgram@gmail.com
+  name = Angel
 [push]
   # A much better default than 'matching'. From the man page:
   #
@@ -26,7 +25,7 @@
 [github]
   user = abr4xas
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
   editor = nano
 [pager]
   color = true
@@ -45,4 +44,3 @@
   postBuffer = 524288000
 [commit]
 	template = ~/.gitmessage.txt
-	gpgsign = true

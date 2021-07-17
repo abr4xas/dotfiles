@@ -11,7 +11,7 @@ if [[ $USER = root ]]; then
     exit 1
 fi
 
-wget -c https://raw.githubusercontent.com/oskarkrawczyk/honukai-iterm-zsh/master/honukai.zsh-theme > /dev/null 2>&1
+curl -s https://raw.githubusercontent.com/oskarkrawczyk/honukai-iterm-zsh/master/honukai.zsh-theme > honukai.zsh-theme
 
 if [ -e ~/.gitconfig ]; then
     rm ~/.gitconfig

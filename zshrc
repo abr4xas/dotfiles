@@ -25,16 +25,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# Run a local server on current folder
-function server() {
-  if [ $1 ]
-  then
-    local port="$1"
-  else
-    local port="8000"
-  fi
-  google-chrome "http://0.0.0.0:$port" && python -m SimpleHTTPServer "$port"
-}
 # Crear un directorio con el nombre que le pasemos por ($1) y luego cambiamos al directorio
 function create() {
   mkdir $1 && cd $1
@@ -60,27 +50,14 @@ extract () {
         echo "'$1' is not a valid file"
       fi
 }
-
 #
-# youtube-dl
-#
+# docker
 
-musica () {
-  youtube-dl -x --audio-format mp3 $1
-}
-
-video () {
-  youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' --merge-output-format=mp4 $1
-}
-
-homestead () {
-  cd ~/Homestead && vagrant halt && vagrant reload --provision && vagrant ssh
-}
 dbuild() {
   docker-compose build
 }
 dstart() {
-  docker-compose up -d 
+  docker-compose up -d
 }
 dexec() {
   docker-compose exec $1 bash
@@ -88,17 +65,12 @@ dexec() {
 dstop () {
   docker-compose stop
 }
-
 mysqlIp() {
   docker exec $1 ping mysql
 }
-
-
 mariaIp() {
   docker exec $1 ping mariadb
 }
-
-
 ddall () {
   docker stop $(docker ps -a -q)
   docker rm -f $(docker ps -a -q)
@@ -108,25 +80,6 @@ ddall () {
 
 dbranch () {
   git branch | grep -v $1 | xargs git branch -D
-}
-
-
-#
-# Ayuda
-#
-
-myHelp() { 
-  echo 'Ayuda para el plugin de GIT'
-  echo 'gl => git pull $(current_branch)'
-  echo 'gp => git push origin $(current_branch)'
-  echo 'gca => git commit -v -a'
-  echo 'gcm => git checkout master'
-  echo 'gba => git branch -a'
-  echo 'glgg => git log --graph --max-count=5'
-  echo 'grh => git reset HEAD'
-  echo 'gdv => git diff -w "$@" | view -'
-  echo 'gss => git status -s'
-  echo 'ddall => elimina cosas de docker'
 }
 
 # nvm
@@ -141,7 +94,7 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 #
-# GO 
+# GO
 export PATH=$PATH:/usr/local/go/bin
 
 #
@@ -155,32 +108,39 @@ alias pushmaster='git push origin master'
 alias pom="git pull origin master"
 alias gclean='g clean -df' # Remove all untracked files & directories
 alias wip="git add . && git commit -m ' Fixed what needed fixing and squished some bugs. :bug:'"
-alias fix="git diff --name-only | uniq | xargs code"
-#
-# other aliasses
-alias _='sudo'
-alias ll="ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F"
+alias fix="git diff --name-only | uniq | xargs code"0
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias undocommit="git reset HEAD~1"
 
 #
 # composer
-#
 alias climb="composer outdated --outdated --direct" #https://jenssegers.com/83/list-outdated-composer-packages
 alias cdo="composer dump-autoload -o"
 alias update-global-composer='cd ~/.composer && composer update'
 alias cgu='update-global-composer'
-alias ci='composer install -vvv'
+alias ci='composer install'
 alias cu='composer update'
-alias cuv='composer update -vvv'
-alias ctest='composer run-script test'
+
 #
-#
+# Misc
 alias reloadcli="source $HOME/.zshrc"
 alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias .....="cd ../../../../"
 alias remoteip="curl icanhazip.com"
-alias open='xdg-open .'
+alias hostfile="sudo vim /etc/hosts"
+alias phpserver="php -S localhost:8888"
+alias publickey="pbcopy < ~/.ssh/id_rsa.pub"
+alias _='sudo'
+alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
+alias c="clear"
+alias l="ls -laF"
+
+# PHP
+alias switch-php80="brew unlink php@7.4 && brew link --overwrite --force php"
+alias switch-php74="brew unlink php && brew link --overwrite --force php@7.4"
 
 #
 # Laravel
@@ -188,3 +148,11 @@ alias art="php artisan"
 alias mfs="php artisan migrate:fresh --seed"
 alias tinker='php artisan tinker'
 alias routelist='php artisan route:list'
+alias sail='bash vendor/bin/sail'
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Lock the screen
+alias afk="osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down,control down}'"
