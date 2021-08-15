@@ -114,7 +114,6 @@ alias undocommit="git reset HEAD~1"
 alias yolo="git add . && git commit -m \"$(curl -s whatthecommit.com/index.txt)\""
 alias donetoday= "git add . && git commit -m 'To be honest, I do not quite remember everyting I changed here today ¯\_(ツ)_/¯ But it is all good, I tell ya.' "
 
-
 #
 # composer
 alias climb="composer outdated --outdated --direct" #https://jenssegers.com/83/list-outdated-composer-packages
@@ -144,6 +143,7 @@ alias l="ls -laF"
 # PHP
 alias switch-php80="brew unlink php@7.4 && brew link --overwrite --force php"
 alias switch-php74="brew unlink php && brew link --overwrite --force php@7.4"
+alias pf="./vendor/phpunit/phpunit/phpunit --filter"
 
 #
 # Laravel
