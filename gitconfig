@@ -44,3 +44,7 @@
   postBuffer = 524288000
 [commit]
 	template = ~/.gitmessage.txt
+[pull]
+	rebase = false
+[init]
+	defaultBranch = master

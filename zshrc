@@ -23,7 +23,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # Crear un directorio con el nombre que le pasemos por ($1) y luego cambiamos al directorio
 function create() {
@@ -82,10 +81,13 @@ dbranch () {
   git branch | grep -v $1 | xargs git branch -D
 }
 
+#
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+#
 #android
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
@@ -96,11 +98,17 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 #
 # GO
 export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
+alias gr="go run"
 
 #
 # mssql
 export PATH=$PATH:/opt/mssql-tools/bin
 
+#
 # Custom git aliases
 alias nope='git reset --hard;git clean -df'
 alias pushlive="git push origin master && git push live master"
@@ -112,8 +120,7 @@ alias fix="git diff --name-only | uniq | xargs code"0
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias undocommit="git reset HEAD~1"
 alias yolo="git add . && git commit -m \"$(curl -s whatthecommit.com/index.txt)\""
-alias donetoday= "git add . && git commit -m 'To be honest, I do not quite remember everyting I changed here today ¯\_(ツ)_/¯ But it is all good, I tell ya.' "
-
+alias donetoday="git add . && git commit -m 'To be honest, I do not quite remember everyting I changed here today ¯\_(ツ)_/¯ But it is all good, I tell ya.'"
 
 #
 # composer
@@ -132,7 +139,7 @@ alias ...="cd ../../"
 alias ....="cd ../../../"
 alias .....="cd ../../../../"
 alias remoteip="curl icanhazip.com"
-alias hostfile="sudo vim /etc/hosts"
+alias hostfile="sudo nano /etc/hosts"
 alias phpserver="php -S localhost:8888"
 alias publickey="pbcopy < ~/.ssh/id_rsa.pub"
 alias _='sudo'
@@ -144,7 +151,8 @@ alias l="ls -laF"
 # PHP
 alias switch-php80="brew unlink php@7.4 && brew link --overwrite --force php"
 alias switch-php74="brew unlink php && brew link --overwrite --force php@7.4"
-
+alias pf="./vendor/phpunit/phpunit/phpunit --filter"
+alias envoy="php vendor/bin/envoy"
 #
 # Laravel
 alias art="php artisan"
