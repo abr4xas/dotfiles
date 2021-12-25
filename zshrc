@@ -49,9 +49,9 @@ extract () {
         echo "'$1' is not a valid file"
       fi
 }
+
 #
 # docker
-
 dbuild() {
   docker-compose build
 }
@@ -120,7 +120,7 @@ alias fix="git diff --name-only | uniq | xargs code"0
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias undocommit="git reset HEAD~1"
 alias yolo="git add . && git commit -m \"$(curl -s whatthecommit.com/index.txt)\""
-alias donetoday="git add . && git commit -m 'To be honest, I do not quite remember everyting I changed here today ¯\_(ツ)_/¯ But it is all good, I tell ya.'"
+alias donetoday= "git add . && git commit -m 'To be honest, I do not quite remember everyting I changed here today ¯\_(ツ)_/¯ But it is all good, I tell ya.' "
 
 #
 # composer
@@ -148,11 +148,12 @@ alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias c="clear"
 alias l="ls -laF"
 
+#
 # PHP
 alias switch-php80="brew unlink php@7.4 && brew link --overwrite --force php"
 alias switch-php74="brew unlink php && brew link --overwrite --force php@7.4"
 alias pf="./vendor/phpunit/phpunit/phpunit --filter"
-alias envoy="php vendor/bin/envoy"
+
 #
 # Laravel
 alias art="php artisan"
@@ -161,9 +162,11 @@ alias tinker='php artisan tinker'
 alias routelist='php artisan route:list'
 alias sail='bash vendor/bin/sail'
 
+#
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
+#
 # Lock the screen
 alias afk="osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down,control down}'"
