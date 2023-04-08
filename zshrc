@@ -7,7 +7,7 @@ export LANG=en_US.UTF-8
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=7
 # GPG signing fix (?)
-export GPG_TTY=$(tty)
+# export GPG_TTY=$(tty)
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -21,8 +21,11 @@ ZSH_THEME=honukai
 #Source
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+#
+# path
+export PATH=$PATH:~/flutter/bin
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # Crear un directorio con el nombre que le pasemos por ($1) y luego cambiamos al directorio
 function create() {
@@ -81,6 +84,10 @@ dbranch () {
   git branch | grep -v $1 | xargs git branch -D
 }
 
+function whatthecommit() {
+  curl --silent --fail https://whatthecommit.com/index.txt
+}
+
 #
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -88,25 +95,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #
-#android
-export ANDROID_HOME="$HOME/Android/Sdk"
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-
-#composer stuff xD
-export PATH="$HOME/.composer/vendor/bin:$PATH"
-
-#
 # GO
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
-
 alias gr="go run"
-
-#
-# mssql
-export PATH=$PATH:/opt/mssql-tools/bin
 
 #
 # Custom git aliases
@@ -119,7 +113,7 @@ alias wip="git add . && git commit -m ' Fixed what needed fixing and squished so
 alias fix="git diff --name-only | uniq | xargs code"0
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias undocommit="git reset HEAD~1"
-alias yolo="git add . && git commit -m \"$(curl -s whatthecommit.com/index.txt)\""
+alias yolo="git add . && git commit -m \"$(whatthecommit)\""
 alias donetoday="git add . && git commit -m 'To be honest, I do not quite remember everyting I changed here today ¯\_(ツ)_/¯ But it is all good, I tell ya.'"
 
 #
@@ -138,7 +132,6 @@ alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias .....="cd ../../../../"
-alias remoteip="curl icanhazip.com"
 alias hostfile="sudo nano /etc/hosts"
 alias phpserver="php -S localhost:8888"
 alias publickey="pbcopy < ~/.ssh/id_rsa.pub"
@@ -151,23 +144,17 @@ alias brewall="brew update && brew upgrade && brew cleanup"
 alias home='cd ~'
 
 #
-# PHP
-alias switch-php80="brew unlink php@7.4 && brew link --overwrite --force php"
-alias switch-php74="brew unlink php && brew link --overwrite --force php@7.4"
-alias pf="./vendor/phpunit/phpunit/phpunit --filter"
-alias envoy="php vendor/bin/envoy"
-
-#
 # phpstorm
 alias storm='open -a /Applications/PhpStorm.app "`pwd`"'
 
 #
 # Laravel
 alias art="php artisan"
-alias mfs="php artisan migrate:fresh --seed"
 alias tinker='php artisan tinker'
-alias routelist='php artisan route:list'
 alias sail='bash vendor/bin/sail'
+alias envoy="php vendor/bin/envoy"
+alias routelist='php artisan route:list'
+alias mfs="php artisan migrate:fresh --seed"
 
 #
 # Show/hide hidden files in Finder
@@ -194,13 +181,3 @@ function pf() {
       vendor/bin/phpunit --filter "$@"
    fi
 }
-
-#
-# node / expo / rn
-export PATH=$PATH:~/.npm-global/bin
-
-#
-# ruby / RoR stuff
-export PATH=$HOME/.rbenv/bin:/usr/local/bin:$HOME/.bin:$PATH
-# load rbenv automatically
-eval "$(rbenv init - zsh)"
