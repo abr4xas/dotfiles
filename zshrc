@@ -80,6 +80,11 @@ ddall () {
   docker rm -v $(docker ps -a -q)
 }
 
+#macro to kill the docker desktop app and the VM (excluding vmnetd -> it's a service)
+function kdo() {
+ ps ax|grep -i docker|egrep -iv 'grep|com.docker.vmnetd'|awk '{print $1}'|xargs kill
+}
+
 dbranch () {
   git branch | grep -v $1 | xargs git branch -D
 }
@@ -155,6 +160,7 @@ alias sail='bash vendor/bin/sail'
 alias envoy="php vendor/bin/envoy"
 alias routelist='php artisan route:list'
 alias mfs="php artisan migrate:fresh --seed"
+alias pint="composer format"
 
 #
 # Show/hide hidden files in Finder
