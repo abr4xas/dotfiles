@@ -19,7 +19,3 @@ honukai.zsh-theme
 *.swp
 *.swo
 *~
-
-# Legacy files (kept for migration compatibility)
-# These can be removed after successful migration
-gitmessage.txt
