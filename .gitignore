@@ -1,9 +1,25 @@
-*
-!.gitignore
-!config
-!entorno.sh
-!gitconfig
-!gitignore
-!README.md
-!zshrc
+# Backup directory
+backups/
+
+# Local overrides
+local/
+*.local
+zsh/config/99-local.zsh
+
+# Downloaded theme (will be re-downloaded on install)
+zsh/themes/honukai.zsh-theme
 honukai.zsh-theme
+
+# macOS
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Legacy files (kept for migration compatibility)
+# These can be removed after successful migration
+gitmessage.txt
