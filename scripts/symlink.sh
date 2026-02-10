@@ -2,8 +2,8 @@
 # symlink.sh - Symlink creation helper
 
 # Source utilities
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "${SCRIPT_DIR}/utils.sh"
+_SYMLINK_SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "${_SYMLINK_SCRIPT_DIR}/utils.sh"
 
 # Create a symlink
 create_symlink() {

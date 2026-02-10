@@ -2,8 +2,8 @@
 # backup.sh - Backup utility functions
 
 # Source utilities
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "${SCRIPT_DIR}/utils.sh"
+_BACKUP_SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "${_BACKUP_SCRIPT_DIR}/utils.sh"
 
 # Backup a file or directory
 backup_file() {
